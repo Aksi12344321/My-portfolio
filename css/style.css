@@ -13,7 +13,7 @@
   /* псевдокласс, который выбирает самый верхний элемент в дереве документа — это обычно элемент <html> в HTML-документе. Это аналогично селектору html, но с ключевым отличием: :root имеет более высокий приоритет в некоторых случаях, особенно в контексте кастомных свойств (переменных) и глобальных стилей */
   --bg-color: #fdfdfd;
   --text-color: #333;
-  --main-color: #2b4162;
+  --main-color: #0a1f30;
   --white-color: #fdfdfd;
   --shadow-color: #rgba(0, 0, 0, 0.2);
 }
@@ -249,49 +249,10 @@ section {
   border-left: 384px solid transparent;
 }
 
-/* .home__img img {
- 
+.home__img img {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 40rem;
+  width: 100%;
   pointer-events: none;
-  margin-right: 100px;
-} */
-
-span {
-  color: var(--main-color);
-}
-
-.about {
-  display: flex;
-  justify-content: center;
-  /* align-items:center; */
-  gap: 4rem;
-}
-
-.about__img img {
-  width: 40vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
-}
-
-.heading {
-  font-size: 4.5rem;
-  text-align: center;
-}
-
-.about__content {
-  margin-top: 200px; /* !!! */
-}
-.about__content h2 {
-  text-align: left;
-  line-height: 1.2;
-}
-
-.about__content h3 {
-  font-size: 2rem;
-}
-
-.about__content p {
-  font-size: 1.6rem;
-  margin: 2rem 0 3rem;
 }
