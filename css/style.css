@@ -1,12 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
+
+:root {
+  /* псевдокласс, который выбирает самый верхний элемент в дереве документа — это обычно элемент <html> в HTML-документе. Это аналогично селектору html, но с ключевым отличием: :root имеет более высокий приоритет в некоторых случаях, особенно в контексте кастомных свойств (переменных) и глобальных стилей */
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: #2b4162;
+  --white-color: #fdfdfd;
+  --shadow-color: #rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 62.5%; /* процент указывает на величину шрифта по отношению к базовому шрифту браузера, который по умолчанию составляет 16px. 62.5% от 16px = 10px. */
+  overflow-x: hidden; /* говорит браузеру, что если содержимое элемента выходит за его границы по горизонтали, оно должно быть скрыто, и прокручивать его невозможно. */
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed; /* задает позиционирование элемента относительно окна браузера (или экрана), а не его родительского контейнера. */
+  display: flex;
+  padding: 2rem 7%; /* Иметь отступы сверху и снизу (в 2rem) и по бокам (в 7%). 1rem всегда равен размеру шрифта корневого элемента. Здесь 2*10 = 20px*/
+  top: 0; /* Это нужно, чтобы элемент "прилип" к верхней части экрана и не сдвигался вниз */
+  left: 0;
+  width: 100%; /* .header будет растягиваться на всю ширину окна браузера */
+  background: transparent;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s;
+}
+
+.header.sticky {
+  background: var(--bg-color);
+  box-shadow: 0 0.1rem 1rem var(--shadow-color);
+}
+
+.header.sticky .navbar a {
+  /* .header.sticky будет означать, что элемент имеет оба класса header и sticky одновременно. Это означает, что внутри блока .header.sticky ищутся ссылки (теги <a>) внутри блока .navbar. Пробел в селекторе указывает на потомков. Нет пробела — это означает одновременное наличие классов у одного элемента. */
+  color: var(--text-color);
+}
+
+.header.sticky .navbar a.active {
+  color: var(--main-color);
+}
+
+.header.sticky .navbar a::before {
+  background: var(--main-color);
+  opacity: 0.7;
+}
+
+.header.sticky #darkMode-icon {
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  font-weight: 600;
+  cursor: default;
+  margin-right: auto;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 1.7rem;
+  color: var(--white-color);
+  font-weight: 500;
+  margin-right: 3.5rem;
+}
+
+.navbar a.active::before {
+  /* ::before — это псевдоэлемент, который добавляется перед содержимым ссылки, но только визуально. Этот элемент не влияет на структуру HTML, а создается исключительно для стилизации */
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background: var(--white-color);
+  bottom: -6px;
+}
+
+#darkMode-icon {
+  font-size: 2.4rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+section {
+  min-height: 100vh; /* Что делает? Задает минимальную высоту элемента равной 100% высоты видимой области окна браузера (viewport height).
+  100vh — это единица измерения, где 1vh равен 1% от высоты окна браузера. Таким образом, 100vh соответствует полной высоте экрана.
+  Когда используется? Это полезно для секций, которые должны занимать весь экран, независимо от содержимого. */
+  padding: 10rem 7% 2rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+}
+
+.home .home__content {
+  max-width: 57rem; /* Это значит, что элемент не будет шире, чем 44 рем, даже если его содержимое больше. */
+}
+
+.home__content h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3;
+}
+
+.home__content h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.home__content p {
+  font-size: 1.6rem;
+}
+
+.home__content .social-media a {
+  display: inline-flex; /* Это делает элемент гибким (flex), но с сохранением поведения, похожего на встроенные элементы (inline). */
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin: 2.5rem 1.5rem 3rem 0;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+  transition: 0.5s ease; /* Добавляет плавный переход для любых изменяющихся свойств (например, color, border, box-shadow). ease: Тип анимации, которая начинается медленно, ускоряется в середине и замедляется к концу. */
+}
+
+.home__content .social-media a:hover {
+  background: var(--main-color);
+  color: var(--white-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--main-color);
+  transition: 0.5s ease;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+  font-size: 1.6rem;
+  color: var(--white-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  border: 0.2rem solid transparent;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--main-color);
+  background-color: var(--white-color);
+  border: 0.2rem solid var(--main-color);
+}
+
+.home .home__profession {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 768px;
+  height: 768px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home .home__profession .profession__box {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  width: 768px;
+  height: 768px;
+}
+
+.home .profession__box .profession__name {
+  position: absolute;
+  display: flex;
+  left: 0;
+  align-items: center;
+  flex-direction: column;
+  color: var(--main-color);
+  transform: rotate(calc(360deg / 4 * var(--i))); /* Эта строка кода поворачивает каждый элемент на угол, соответствующий значению переменной --i, создавая вращение элементов вокруг их центра. */
+  transform-origin: 384px; /* Свойство transform-origin указывает точку, вокруг которой происходит трансформация элемента. Это координаты для оси вращения (по умолчанию ось вращения находится в центре элемента). 384px — это значение для оси трансформации. Скорее всего, это половина ширины элемента, и таким образом ось трансформации будет расположена в центре элемента (если элемент имеет размер 768px). В этом случае элемент будет вращаться вокруг своей центральной точки, так как 384px — это половина от 768px. */
+  background: var(--bg-color);
+  padding: 13px 0;
+}
+
+.home .profession__name i {
+  font-size: 3.8rem;
+}
+
+.home .profession__name h3 {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.home .profession__box .circle {
+  width: 560px;
+  height: 560px;
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+}
+
+.home .profession__box .profession__name:nth-child(1) i {
+  /* Это правило применяет отступ справа (15px) только к первому элементу <i> внутри первого .profession__name в контейнере .profession__box. */
+  margin-right: 15px;
+}
+
+.home .profession__box .profession__name:nth-child(2),/* :nth-child(2) — выбирает второй элемент с классом .profession__name внутри .profession__box. */
+.home .profession__box .profession__name:nth-child(4) {
+  padding-bottom: 20px;
+}
+
+.home .home__profession .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 384px solid var(--main-color);
+  border-right: 384px solid var(--main-color);
+  border-bottom: 384px solid var(--main-color);
+  border-left: 384px solid transparent;
+}
+
+/* .home__img img {
+ 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40rem;
+  pointer-events: none;
+  margin-right: 100px;
+} */
