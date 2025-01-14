@@ -258,3 +258,40 @@ section {
   pointer-events: none;
   margin-right: 100px;
 } */
+
+span {
+  color: var(--main-color);
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  /* align-items:center; */
+  gap: 4rem;
+}
+
+.about__img img {
+  width: 40vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
+}
+
+.heading {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.about__content {
+  margin-top: 200px; /* !!! */
+}
+.about__content h2 {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.about__content h3 {
+  font-size: 2rem;
+}
+
+.about__content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
