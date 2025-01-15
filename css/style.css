@@ -532,3 +532,39 @@ span {
   margin-top: 2rem;
   cursor: pointer;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 7%;
+  background: var(--main-color);
+}
+
+.footer__text p {
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+
+.footer__iconTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid var(--main-color);
+  background: var(--white-color);
+  outline: 0.2rem solid transparent;
+}
+
+.footer__iconTop a i {
+  font-size: 2.4rem;
+
+  color: #333;
+  transition: 0.5s ease;
+}
+
+.footer__iconTop a:hover {
+  outline-color: var(--white-color);
+}
