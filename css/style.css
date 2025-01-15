@@ -15,7 +15,7 @@
   --text-color: #333;
   --main-color: #0a1f30;
   --white-color: #fdfdfd;
-  --shadow-color: #rgba(0, 0, 0, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -489,4 +489,46 @@ span {
 
 .feedbacks__box .swiper-pagination-bullet-active {
   background: var(--main-color);
+}
+
+.contacts h2 {
+  margin-bottom: 3rem;
+}
+
+.contacts form {
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contacts form .input__box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input__box input,
+.contacts form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border-radius: 0.8rem;
+  margin: 0.7rem 0;
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+}
+
+.contacts form .input__box input {
+  width: 49%;
+}
+
+.contacts form textarea {
+  resize: none;
+}
+
+.contacts form .btn {
+  margin-top: 2rem;
+  cursor: pointer;
 }
