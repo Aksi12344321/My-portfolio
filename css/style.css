@@ -413,3 +413,80 @@ span {
   font-size: 2rem;
   color: #333;
 }
+
+.feedbacks__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 5rem 1rem;
+}
+
+.feedbacks__container .feedbacks__wrapper {
+  position: relative;
+  max-width: 90rem;
+  width: 100%;
+  padding: 5rem;
+}
+
+.feedbacks__wrapper .feedbacks__box {
+  border-radius: 2rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.feedbacks__content .feedbacks__slide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 2rem;
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+  padding: 3rem 5rem;
+  border-top: 0.8rem solid var(--main-color);
+  border-bottom: 0.8rem solid var(--main-color);
+}
+
+.feedbacks__slide img {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.5rem solid var(--bg-color);
+  outline: 0.5rem solid var(--main-color);
+}
+
+.feedbacks__slide h3 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+.feedbacks__slide p {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.feedbacks__box .swiper-button-next,
+.feedbacks__box .swiper-button-prev {
+  color: var(--main-color);
+}
+
+.feedbacks__box .swiper-button-next {
+  right: 0;
+}
+
+.feedbacks__box .swiper-button-prev {
+  left: 0;
+}
+
+.feedbacks__box .swiper-pagination {
+  margin-bottom: 1.5rem;
+}
+
+.feedbacks__box .swiper-pagination-bullet {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.feedbacks__box .swiper-pagination-bullet-active {
+  background: var(--main-color);
+}
