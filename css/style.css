@@ -256,3 +256,91 @@ section {
   width: 100%;
   pointer-events: none;
 }
+
+span {
+  color: var(--main-color);
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  /* align-items:center; */
+  gap: 4rem;
+}
+
+.about__img img {
+  width: 40vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
+}
+
+.heading {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.about__content {
+  margin-top: 200px; /* !!! */
+}
+.about__content h2 {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.about__content h3 {
+  font-size: 2rem;
+}
+
+.about__content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
+
+.services {
+  min-height: auto;
+  padding-bottom: 7rem;
+}
+
+.services h2 {
+  margin-bottom: 5rem;
+}
+
+.services .services__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.services__container .services__box {
+  flex: 1 1 30rem;
+  background: var(--bg-color);
+  padding: 3rem 2rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+  text-align: center;
+  border-top: 0.6rem solid var(--main-color);
+  border-bottom: 0.6rem solid var(--main-color);
+  transition: 0.5s ease;
+}
+
+.services__container .services__box:hover {
+  box-shadow: 0 0.1rem 2rem var(--shadow-color);
+  transform: scale(1.02);
+}
+
+.services__box i {
+  font-size: 7rem;
+  color: var(--main-color);
+}
+
+.services__box h3 {
+  font-size: 2.6rem;
+  transition: 0.5s ease;
+}
+.services__box:hover h3 {
+  color: var(--main-color);
+}
+.services__box p {
+  font-size: 1.6rem;
+  margin: 1rem 0 3rem;
+}
