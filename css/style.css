@@ -264,12 +264,12 @@ span {
 .about {
   display: flex;
   justify-content: center;
-  /* align-items:center; */
+  align-items: center;
   gap: 4rem;
 }
 
 .about__img img {
-  width: 40vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
+  width: 30vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
 }
 
 .heading {
@@ -277,9 +277,6 @@ span {
   text-align: center;
 }
 
-.about__content {
-  margin-top: 200px; /* !!! */
-}
 .about__content h2 {
   text-align: left;
   line-height: 1.2;

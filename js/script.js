@@ -11,6 +11,22 @@ window.onscroll = () => {
 
     Это означает, что каждый раз, когда пользователь прокручивает страницу (событие scroll), выполняется указанная функция.
     Функция, заключенная в () => { ... }, является стрелочной функцией, которая не имеет своего собственного контекста this, а использует контекст внешней области. */
+
+  sections.forEach((sec) => {
+    let top = window.scrollY; // Получаем текущую вертикальную позицию прокрутки окна
+    let offset = sec.offsetTop - 150; //Получаем положение верхней части секции относительно начала страницы
+    let height = sec.offsetHeight; //Получаем высоту секции
+    let id = sec.getAttribute("id"); //Получаем ID текущей секции
+
+    if (top >= offset && top < offset + height) {
+      //top >= offset (прокрутка вошла в секцию) и top < offset + height (прокрутка еще не вышла за пределы секции).
+      navLinks.forEach((links) => {
+        links.classList.remove("active");
+        document.querySelector(`header nav a[href*="${id}"]`).classList.add("active"); // Добавляем класс active на ссылку, которая соответствует текущей секции
+      });
+    }
+  });
+
   /*========== sticky navbar ==========*/
 
   let header = document.querySelector(".header");
