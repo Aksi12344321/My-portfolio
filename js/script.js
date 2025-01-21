@@ -2,6 +2,11 @@
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+});
+
 /*========== scroll sections active link ==========*/
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
@@ -34,6 +39,9 @@ window.onscroll = () => {
   Если window.scrollY <= 100, класс sticky удаляется. */
 
   /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
+
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 };
 
 /*========== swiper ==========*/
@@ -55,4 +63,22 @@ var swiper = new Swiper(".mySwiper", {
 
 /*========== dark light mode ==========*/
 
+let darkModeIcon = document.querySelector("#darkMode-icon");
+darkModeIcon.addEventListener("click", () => {
+  darkModeIcon.classList.toggle("bx-sun");
+  document.body.classList.toggle("dark-mode");
+});
+
 /*========== scroll reveal ==========*/
+
+ScrollReveal({
+  reset: true,
+  distance: "80px",
+  duration: 2000,
+  delay: 200,
+});
+
+ScrollReveal().reveal(".home__content, .contacts .heading", { origin: "top" });
+ScrollReveal().reveal(".home__img img, .services__container, .portfolio__box, .feedbacks__wrapper, .contacts form", { origin: "bottom" });
+ScrollReveal().reveal(".home__content h1, .about__img img", { origin: "left" });
+ScrollReveal().reveal(".home__content h3, .home__content p, .about__content", { origin: "right" });

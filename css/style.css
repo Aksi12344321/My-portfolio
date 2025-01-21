@@ -18,6 +18,11 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
+.dark-mode {
+  --bg-color: #3a4b59;
+  --text-color: #fdfdfd;
+}
+
 html {
   font-size: 62.5%; /* процент указывает на величину шрифта по отношению к базовому шрифту браузера, который по умолчанию составляет 16px. 62.5% от 16px = 10px. */
   overflow-x: hidden; /* говорит браузеру, что если содержимое элемента выходит за его границы по горизонтали, оно должно быть скрыто, и прокручивать его невозможно. */
@@ -98,11 +103,17 @@ body {
   cursor: pointer;
 }
 
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+}
+
 section {
   min-height: 100vh; /* Что делает? Задает минимальную высоту элемента равной 100% высоты видимой области окна браузера (viewport height).
   100vh — это единица измерения, где 1vh равен 1% от высоты окна браузера. Таким образом, 100vh соответствует полной высоте экрана.
   Когда используется? Это полезно для секций, которые должны занимать весь экран, независимо от содержимого. */
-  padding: 10rem 7% 2rem;
+  padding: 5rem 7% 2rem;
 }
 
 .home {
@@ -265,11 +276,17 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 10rem;
 }
 
 .about__img img {
-  width: 30vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
+  /*  width: 30vw; /* это значит, что ширина элемента будет равна 40% от ширины видимой области браузера */
+  width: 34rem;
+  height: 34rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.5rem solid var(--bg-color);
+  outline: 0.5rem solid var(--main-color);
 }
 
 .heading {
@@ -416,14 +433,14 @@ span {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .feedbacks__container .feedbacks__wrapper {
   position: relative;
   max-width: 90rem;
   width: 100%;
-  padding: 5rem;
+  padding: 1rem 5rem;
 }
 
 .feedbacks__wrapper .feedbacks__box {
@@ -496,7 +513,7 @@ span {
   max-width: 70rem;
   margin: 1rem auto;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .contacts form .input__box {
@@ -527,6 +544,7 @@ span {
 
 .contacts form .btn {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
 
@@ -564,4 +582,272 @@ span {
 
 .footer__iconTop a:hover {
   outline-color: var(--white-color);
+}
+
+/* ====== Breakpoints ======== */
+@media (max-width: 1457px) {
+  .home .home__profession .profession__box {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  .home .home__profession {
+    height: 85.8rem;
+  }
+  .home .home__profession .profession__box {
+    display: none;
+  }
+  .home .home__profession .overlay {
+    right: -9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 2rem 3%;
+  }
+  section {
+    padding: 10rem 3% 2rem;
+  }
+  .home .home__profession .profession__box {
+    right: -22rem;
+  }
+  .home .home__profession .overlay {
+    right: -15rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .home .home__content {
+    max-width: 50rem;
+  }
+  .home .home__profession .profession__box {
+    right: -45rem;
+  }
+  .home .home__profession .overlay {
+    right: -39.5rem;
+  }
+  .home__img img {
+    display: none;
+  }
+  .navbar a:nth-child(1),
+  .navbar a:nth-child(2) {
+    color: var(--main-color);
+  }
+  .navbar a.active::before {
+    background: var(--main-color);
+    opacity: 0.7;
+  }
+  .services,
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+  .contacts {
+    min-height: auto;
+  }
+  footer {
+    padding: 2rem 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  #darkMode-icon {
+    position: absolute;
+    right: 7rem;
+    font-size: 2.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.1rem;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    color: var(--text-color);
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  .navbar a:nth-child(1),
+  .navbar a:nth-child(2) {
+    color: var(--text-color);
+  }
+  .navbar a.active {
+    color: var(--main-color);
+  }
+  .navbar a::before {
+    display: none;
+  }
+
+  .home {
+    padding: 0 3% 23rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home__content {
+    margin-top: 10rem;
+  }
+  .home__content h3 {
+    font-size: 2.6rem;
+  }
+
+  .home__content h1 {
+    font-size: 3rem;
+  }
+
+  .home__content .social-media a {
+    margin: 2.5rem 0.75rem 3rem;
+  }
+
+  .home .home__profession {
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .home .home__profession .profession__box {
+    /* position: fixed;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    border-radius: 0; */
+    display: none;
+  }
+  .home .profession__box .profession__name {
+    padding: 0 13px;
+    left: auto;
+    transform-origin: 0;
+  }
+
+  .home .profession__box .profession__name:nth-child(1) {
+    transform: rotate(-90deg) translate(-120px, -210px);
+  }
+  .home .profession__box .profession__name:nth-child(1) i {
+    margin-right: 0;
+  }
+
+  .home .profession__box .profession__name:nth-child(2) {
+    transform: rotate(0deg) translate(0, -335px);
+  }
+
+  .home .profession__box .profession__name:nth-child(3) {
+    transform: rotate(90deg) translate(-115px, -450px);
+  }
+
+  .home .profession__box .profession__name:nth-child(4) {
+    transform: rotate(180deg) translate(-220px, -335px);
+  }
+
+  .home .profession__box .circle {
+    /* position: fixed;
+    width: 670px;
+    height: 670px;
+    z-index: -1; */
+    display: none;
+  }
+
+  .home .home__profession .overlay {
+    position: fixed;
+    top: 70rem;
+    left: 50%;
+    right: 0;
+    transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
+    border-width: 23.9rem;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about__content h2 {
+    text-align: center;
+  }
+
+  .about__img img {
+    margin-top: -2rem;
+  }
+
+  .services h2,
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio .portfolio__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feedbacks__container .feedbacks__wrapper {
+    padding: 5rem 0;
+  }
+
+  .feedbacks__content .feedbacks__slide {
+    padding: 3rem 2rem;
+  }
+
+  .feedbacks__box .swiper-button-next,
+  .feedbacks__box .swiper-button-prev {
+    display: none;
+  }
+}
+
+@media (max-width: 617px) {
+  .portfolio .portfolio__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50;
+  }
+  #darkMode-icon {
+    right: 6rem;
+  }
+  .home {
+    padding: 5rem 3% 0;
+  }
+
+  .contact form .input__box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 365px) {
+  .about__img img {
+    display: none;
+  }
+
+  .contacts {
+    padding-top: 0;
+  }
+  .about {
+    padding-top: 0;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
+  }
 }
