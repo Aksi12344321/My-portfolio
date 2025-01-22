@@ -344,7 +344,7 @@ span {
 .services .services__container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -359,6 +359,8 @@ span {
   border-top: 0.6rem solid var(--main-color);
   border-bottom: 0.6rem solid var(--main-color);
   transition: 0.5s ease;
+  justify-content: space-between;
+  min-height: 25rem;
 }
 
 .services__container .services__box:hover {
@@ -381,6 +383,7 @@ span {
 .services__box p {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
+  flex-grow: 1;
 }
 
 .portfolio {
@@ -504,21 +507,31 @@ span {
   text-align: center;
 }
 
+.feedbacks__slide {
+  min-height: 40rem; /* Задайте подходящую минимальную высоту */
+}
 .feedbacks__box .swiper-button-next,
 .feedbacks__box .swiper-button-prev {
   color: var(--main-color);
+  position: absolute;
+  top: 50%; /* Центрирование кнопок */
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .feedbacks__box .swiper-button-next {
-  right: 0;
+  right: 10px;
 }
 
 .feedbacks__box .swiper-button-prev {
-  left: 0;
+  left: 10px;
 }
 
 .feedbacks__box .swiper-pagination {
-  margin-bottom: 1.5rem;
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .feedbacks__box .swiper-pagination-bullet {
