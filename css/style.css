@@ -50,8 +50,6 @@ body {
   align-items: center;
   z-index: 100;
   transition: 0.5s;
-  margin: 0;
-  padding: 0;
 }
 
 .header.sticky {
