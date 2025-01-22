@@ -886,6 +886,10 @@ span {
     padding: 0 3% 0;
   }
 
+  .home .home__content {
+    margin-top: 0;
+  }
+
   .contact form .input__box input {
     width: 100%;
   }
