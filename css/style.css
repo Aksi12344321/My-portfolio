@@ -479,7 +479,7 @@ span {
 .feedbacks__wrapper .feedbacks__box {
   border-radius: 2rem;
   overflow: hidden;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .feedbacks__content .feedbacks__slide {
@@ -535,7 +535,7 @@ span {
 
 .feedbacks__box .swiper-pagination {
   position: absolute;
-  bottom: 2.2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -882,6 +882,7 @@ span {
   }
   .home {
     padding: 0 3% 0;
+    margin-top: -5rem;
   }
 
   .home .home__content {
