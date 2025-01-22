@@ -78,7 +78,7 @@ ScrollReveal({
   delay: 200,
 });
 
-ScrollReveal().reveal(".home__content, .contacts .heading", { origin: "top" });
+ScrollReveal().reveal(".home__content, .contacts heading", { origin: "top" });
 ScrollReveal().reveal(".home__img img, .services__container, .portfolio__box, .feedbacks__wrapper, .contacts form", { origin: "bottom" });
 ScrollReveal().reveal(".home__content h1, .about__img img", { origin: "left" });
 ScrollReveal().reveal(".home__content h3, .home__content p, .about__content", { origin: "right" });

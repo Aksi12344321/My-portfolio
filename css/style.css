@@ -9,6 +9,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* псевдокласс, который выбирает самый верхний элемент в дереве документа — это обычно элемент <html> в HTML-документе. Это аналогично селектору html, но с ключевым отличием: :root имеет более высокий приоритет в некоторых случаях, особенно в контексте кастомных свойств (переменных) и глобальных стилей */
   --bg-color: #fdfdfd;
@@ -31,6 +36,7 @@ html {
 body {
   background: var(--bg-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .header {
@@ -44,6 +50,8 @@ body {
   align-items: center;
   z-index: 100;
   transition: 0.5s;
+  margin: 0;
+  padding: 0;
 }
 
 .header.sticky {
@@ -632,6 +640,10 @@ span {
   html {
     font-size: 55%;
   }
+
+  .about {
+    margin-top: 20rem;
+  }
   .home .home__profession {
     height: 85.8rem;
   }
@@ -647,9 +659,9 @@ span {
   .header {
     padding: 2rem 3%;
   }
-  section {
+  /*  section {
     padding: 10rem 3% 2rem;
-  }
+  } */
   .home .home__profession .profession__box {
     right: -22rem;
   }
@@ -668,8 +680,13 @@ span {
   .home .home__profession .overlay {
     right: -39.5rem;
   }
-  .home__img img {
+  /*  .home__img img {
     display: none;
+  } */
+
+  .home__img img {
+    max-width: 50rem; /* Устанавливаем максимальную ширину изображения */
+    height: auto; /* Сохраняем пропорции */
   }
   .navbar a:nth-child(1),
   .navbar a:nth-child(2) {
@@ -692,16 +709,21 @@ span {
 }
 
 @media (max-width: 768px) {
+  .home__img img {
+    display: none;
+  }
   #menu-icon {
     display: block;
+    padding-right: 2rem;
   }
   #darkMode-icon {
     position: absolute;
-    right: 7rem;
+    right: 8rem;
     font-size: 2.6rem;
     color: var(--text-color);
     margin-bottom: 0.1rem;
   }
+
   .navbar {
     position: absolute;
     top: 100%;
@@ -812,7 +834,7 @@ span {
   }
 
   .about {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
   }
 
@@ -858,10 +880,10 @@ span {
     font-size: 50;
   }
   #darkMode-icon {
-    right: 6rem;
+    right: 8rem;
   }
   .home {
-    padding: 5rem 3% 0;
+    padding: 0 3% 0;
   }
 
   .contact form .input__box input {
