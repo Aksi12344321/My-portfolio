@@ -483,7 +483,6 @@ span {
 }
 
 .feedbacks__content .feedbacks__slide {
-  height: 40rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -493,6 +492,12 @@ span {
   padding: 3rem 5rem;
   border-top: 0.8rem solid var(--main-color);
   border-bottom: 0.8rem solid var(--main-color);
+}
+.swiper-wrapper {
+  align-items: stretch;
+}
+.swiper-slide {
+  height: auto;
 }
 
 .feedbacks__slide img {
@@ -892,6 +897,13 @@ span {
 
   .contact form .input__box input {
     width: 100%;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-top: 2rem;
+    gap: 2rem;
   }
 }
 
